@@ -20,7 +20,12 @@ namespace OrdersAPI.Controllers
         {
             _context = context;
         }
-       
+
+        public List<Order>getOrder()
+        {
+            return _context.Orders.ToList();
+
+        }
         [HttpPost]
         public async Task<IActionResult> placeOrder([Bind("Id,UserId,AddressLine1,AddressLine2,City,PostalCode,Country,Mobile,MailId,ContactPerson")] UserAddress address)
         {
@@ -38,7 +43,8 @@ namespace OrdersAPI.Controllers
                 _context.Add(order);
                      await _context.SaveChangesAsync();
 
-                var orderInfo =  _context.Orders.Where(o => o.UserId == userId).FirstOrDefault();
+                var orderI= _context.Orders.Where(o => o.UserId == userId).ToList();
+                var orderInfo = orderI.LastOrDefault();
                 foreach (var c in cart)
                 {
 
@@ -70,7 +76,7 @@ namespace OrdersAPI.Controllers
             }
             catch(Exception e)
             {
-                return Ok();
+                return Ok("Fail");
             }
             }
         //// GET: Orders

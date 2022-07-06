@@ -30,6 +30,7 @@ namespace OrdersAPI
         {
 
             services.AddDbContext<ECommerceContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddCors();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -46,6 +47,8 @@ namespace OrdersAPI
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "OrdersAPI v1"));
+                app.UseCors(options => options.WithOrigins("http://localhost:8080/").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
+
             }
 
             app.UseHttpsRedirection();
