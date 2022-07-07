@@ -7,6 +7,11 @@ namespace OrdersAPI.Models
 {
     public partial class UserAddress
     {
+        public UserAddress()
+        {
+            Orders = new HashSet<Order>();
+        }
+
         public int Id { get; set; }
         public int UserId { get; set; }
         public string AddressLine1 { get; set; }
@@ -19,5 +24,6 @@ namespace OrdersAPI.Models
         public string ContactPerson { get; set; }
 
         public virtual User User { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
