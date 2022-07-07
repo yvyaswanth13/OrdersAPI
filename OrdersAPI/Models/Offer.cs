@@ -18,7 +18,7 @@ namespace OrdersAPI.Models
         public string OfferDescription { get; set; }
         public int? ProductId { get; set; }
         public int? DiscountPercentage { get; set; }
-        public int? DiscountAmount { get; set; }
+        public double? DiscountAmount { get; set; }
         public bool? IsActive { get; set; }
         public DateTime? CreatedOn { get; set; }
         public DateTime? ModifiedOn { get; set; }
