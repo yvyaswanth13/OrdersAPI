@@ -33,11 +33,11 @@ namespace OrdersAPI.Controllers
             try
             {
                 var cart = await _context.Carts.Where(o => o.UserId == userId).ToListAsync();
-                int total = (from c in cart where c.UserId == userId select c).Sum(x => x.SubTotal).Value;
+                float total = (float)(from c in cart where c.UserId == userId select c).Sum(x => x.SubTotal).Value;
 
                 Order order = new Order();
                 order.UserId =1000;
-                order.TotalAmount = total;
+                order.TotalAmount = Math.Round(total, 2); 
                 order.PaymentType = "COD";
 
                 _context.Add(order);
