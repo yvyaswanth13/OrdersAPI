@@ -133,3 +133,4 @@ C:\Users\Admin\source\repos\OrdersAPI\OrdersAPI\obj\Debug\net5.0\OrdersAPI.dll
 C:\Users\Admin\source\repos\OrdersAPI\OrdersAPI\obj\Debug\net5.0\ref\OrdersAPI.dll
 C:\Users\Admin\source\repos\OrdersAPI\OrdersAPI\obj\Debug\net5.0\OrdersAPI.pdb
 C:\Users\Admin\source\repos\OrdersAPI\OrdersAPI\obj\Debug\net5.0\OrdersAPI.genruntimeconfig.cache
+C:\Users\Admin\source\repos\OrdersAPI\OrdersAPI\obj\Debug\net5.0\OrdersAPI.csproj.AssemblyReference.cache
